@@ -3,6 +3,7 @@ package donutProject.utilities;
 import java.util.Scanner;
 
 public class Kbd {
+	// Create the scanner object
 	private static Scanner scanner = new Scanner(System.in);
 	
 	/**

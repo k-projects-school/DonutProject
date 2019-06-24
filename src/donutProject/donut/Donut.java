@@ -40,4 +40,13 @@ public class Donut {
 	public Flavor getFlavor() {
 		return this.flavor;
 	}
+
+	/**
+	 * Get the name.
+	 * 
+	 * @return
+	 */
+	public String getName() {
+		return this.flavor.getName();
+	}
 }

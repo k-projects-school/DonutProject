@@ -7,9 +7,16 @@ import donutProject.enums.Flavor;
 import donutProject.utilities.Kbd;
 
 public class Shop {
+	// The stock for the shop
 	private Stock stock = new Stock();
+	// The register for the shop
 	private Register register = new Register();
 
+	/**
+	 * Constructor
+	 * 
+	 * @param stockAmount
+	 */
 	public Shop(int stockAmount) {
 		this.stock.initStock(stockAmount);
 	}
@@ -62,13 +69,12 @@ public class Shop {
 		}
 		System.out.print("Choose a number between 1 and " + Flavor.values().length + ": ");
 
-		this.handleUserInput();
 	}
 
 	/**
 	 * Handle the user input
 	 */
-	private void handleUserInput() {
+	public void handleUserInput() {
 		try {
 			// Get the response of the user and parse it to an integer
 			int input = Integer.parseInt(Kbd.next());
@@ -82,8 +88,6 @@ public class Shop {
 			}
 			// Get the chosen flavor
 			Flavor flavor = Flavor.values()[input - 1];
-			// Get the Donut of the chosen flavor
-			Donut donut = this.getChoice(input);
 
 			if (this.stock.check(flavor)) {
 				// If the flavor is in stock, sell the donut and add a ticket to the register
